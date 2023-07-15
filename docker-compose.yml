@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  dns-client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      trabalho-redes:
+        ipv4_address: 192.168.10.2
+    volumes:
+      - client-data:/data
+    tty: true
+    stdin_open: true
+
+  dns-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      trabalho-redes:
+        ipv4_address: 192.168.10.3
+    volumes:
+      - server-data:/etc/bind
+    tty: true
+    stdin_open: true
+
+networks:
+  trabalho-redes:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/24
+
+volumes:
+  client-data:
+  server-data:

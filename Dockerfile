@@ -7,5 +7,4 @@ RUN apt update && apt install -y \
     bind9 \
     nano
 
-
 CMD tail -f /dev/null

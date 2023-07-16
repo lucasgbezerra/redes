@@ -10,6 +10,7 @@ services:
         ipv4_address: 192.168.10.2
     volumes:
       - client-data:/data
+    hostname: www.lumidoubleclient.com
     tty: true
     stdin_open: true
 
@@ -22,8 +23,20 @@ services:
         ipv4_address: 192.168.10.3
     volumes:
       - server-data:/etc/bind
+    hostname: www.lumidoubleserver.com
     tty: true
     stdin_open: true
+
+  bind9:
+    image: ubuntu/bind9:latest
+    environment:
+      - BIND9_USER=root
+    volumes:
+      - ./named.conf:/etc/bind/named.conf
+      - ./db.example.com:/var/cache/bind/db.example.com
+    ports:
+      - "53:53/udp" 
+    restart: unless-stopped
 
 networks:
   trabalho-redes:

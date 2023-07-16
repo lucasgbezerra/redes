@@ -1,10 +1,10 @@
 html_content="<html>
 <head>
-  <title>Página de Teste</title>
+  <title>Página da nossa empresa fictítia</title>
 </head>
 <body>
-  <h1>Esta é uma página de teste</h1>
-  <p>Bem-vindo à página de teste!</p>
+  <h1>Esta é a página da nossa empresa fictícia</h1>
+  <p>Bem-vindo à Lumidouble</p>
 </body>
 </html>"
 

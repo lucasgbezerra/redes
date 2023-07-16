@@ -75,6 +75,8 @@ services:
     hostname: www.lumidoublewwwserver.com
     tty: true
     stdin_open: true
+    ports:
+      - 80:80
     command: >
       sh -c "
       export DEBIAN_FRONTEND=noninteractive &&

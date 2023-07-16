@@ -10,6 +10,7 @@ services:
         ipv4_address: 192.168.10.2
     volumes:
       - client-data:/data
+      - ./resolv.conf:/etc/resolv.conf
     hostname: www.lumidoubleclient.com
     tty: true
     stdin_open: true
@@ -23,20 +24,27 @@ services:
         ipv4_address: 192.168.10.3
     volumes:
       - server-data:/etc/bind
+      - ./named.conf.local:/etc/bind/named.conf.local
+      - ./db.lumidouble:/etc/bind/db.lumidouble
+      - ./db.doublelumi:/etc/bind/db.doublelumi
+      - ./setup-postfix.sh:/setup-postfix.sh
     hostname: www.lumidoubleserver.com
     tty: true
     stdin_open: true
+    command: >
+      sh -c "
+      export DEBIAN_FRONTEND=noninteractive &&
+      apt-get update && 
+      apt-get install -y dnsutils postfix && 
+      named -g"
 
-  bind9:
-    image: ubuntu/bind9:latest
-    environment:
-      - BIND9_USER=root
-    volumes:
-      - ./named.conf:/etc/bind/named.conf
-      - ./db.example.com:/var/cache/bind/db.example.com
-    ports:
-      - "53:53/udp" 
-    restart: unless-stopped
+  # bind9:
+  #   image: ubuntu/bind9:latest
+  #   environment:
+  #     - BIND9_USER=root
+  #   ports:
+  #     - "53:53/udp" 
+  #   restart: unless-stopped
 
 networks:
   trabalho-redes:

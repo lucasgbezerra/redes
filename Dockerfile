@@ -5,6 +5,6 @@ RUN apt update && apt install -y \
     net-tools \
     iputils-ping \
     bind9 \
-    nano
+    nano 
 
 CMD tail -f /dev/null

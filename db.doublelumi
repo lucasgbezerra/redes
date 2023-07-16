@@ -1,0 +1,11 @@
+@ IN SOA lumidoubleserver.com. root.lumidoubleserver.com. (
+2022092601
+21600
+1800
+604800
+86400 )
+
+IN NS lumidoubleserver.com.
+
+2 IN PTR lumidoubleclient.com. 
+3 IN PTR lumidoubleserver.com.

@@ -11,3 +11,6 @@
 lumidoubleserver.com. IN MX 10 lumidoubleserver.com ;entrada MX (mail server)
 localhost IN A 127.0.0.1
 dns-client IN A 192.168.10.2
+dns-server IN A 192.168.10.3
+mail-server IN A 192.168.10.4
+www-server IN A 192.168.10.5

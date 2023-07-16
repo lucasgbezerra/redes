@@ -9,3 +9,5 @@ IN NS lumidoubleserver.com.
 
 2 IN PTR lumidoubleclient.com. 
 3 IN PTR lumidoubleserver.com.
+4 IN PTR lumidoublemailserver.com.
+5 IN PTR lumidoublewwwserver.com.

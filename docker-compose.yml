@@ -52,7 +52,7 @@ services:
         ipv4_address: 192.168.10.4
     volumes:
       - ./setup-postfix.sh:/setup-postfix.sh
-    hostname: www.lumidoubleserver.com
+    hostname: www.lumidoublemailserver.com
     tty: true
     stdin_open: true
     command: >
@@ -72,7 +72,7 @@ services:
     volumes:
       - ./setup-apache2.sh:/setup-apache2.sh
       - ./create-html.sh:/create-html.sh
-    hostname: www.lumidoubleserver.com
+    hostname: www.lumidoublewwwserver.com
     tty: true
     stdin_open: true
     command: >

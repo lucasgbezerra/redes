@@ -1,0 +1,11 @@
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+192.168.10.2	www.lumidoubleclient.com
+192.168.10.3	www.lumidoubleserver.com
+192.168.10.4	www.lumidoublemailserver.com
+192.168.10.5	www.lumidoublewwwserver.com
+

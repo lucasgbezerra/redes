@@ -52,14 +52,16 @@ services:
         ipv4_address: 192.168.10.4
     volumes:
       - ./setup-postfix.sh:/setup-postfix.sh
-    hostname: www.lumidoublemailserver.com
+    hostname: lumidoublemailserver.com
     tty: true
     stdin_open: true
+    ports:
+      - 25:25
     command: >
       sh -c "
       export DEBIAN_FRONTEND=noninteractive &&
       apt-get update && 
-      apt-get install -y dnsutils postfix && 
+      apt-get install -y dnsutils postfix mailutils dovecot-core dovecot-imapd net-tools thunderbird && 
       named -g"
 
   www-server:

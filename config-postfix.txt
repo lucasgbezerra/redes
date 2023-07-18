@@ -1,0 +1,26 @@
+2. Internet site 
+Nome do dominio: lumidoublemailserver.com
+lumidoublemailserver.com 
+localhost
+no
+127.0.0.0/8, 192.168.10.0/24
+0
++
+1 - all
+
+Depois de colocar estas opcoes, rodar script e alterar configurações do postfix
+
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_un>
+myhostname = lumidoublemailserver.com
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+myorigin = /etc/mailname
+mydestination = localhost, lumidoublemailserver.com
+relayhost =
+mynetworks = 127.0.0.0/8, 192.168.10.0/24
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+inet_protocols = all
+
+service postfix restart 

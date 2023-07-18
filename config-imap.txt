@@ -1,0 +1,5 @@
+nano /etc/dovecot/dovecot.conf
+
+descomentar linha: list =*,::
+
+service dovecot restart

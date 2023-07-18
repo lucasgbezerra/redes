@@ -2,6 +2,12 @@ dpkg-reconfigure postfix
 
 /etc/init.d/postfix start
 
-adduser DafneM
+adduser dafnem
+adduser lucasg
 
-mail -v moretti.dafne@gmail.com 
+usermod -aG sudo dafnem #dafne root
+
+su -c dafnem #troca para o usuario dafne
+
+mail lucasg
+# mail dafnem@lumidoublemailserver.com 

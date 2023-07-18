@@ -1,13 +1,13 @@
-@ IN SOA lumidoubleserver.com. root.lumidoubleserver.com. (
+@ IN SOA dns-server.lumidoubleserver.com. root.dns-server.lumidoubleserver.com. (
 2022092601
 21600
 1800
 604800
 86400 )
 
-IN NS lumidoubleserver.com.
+IN NS dns-server.lumidoubleserver.com.
 
-2 IN PTR lumidoubleclient.com. 
-3 IN PTR lumidoubleserver.com.
-4 IN PTR lumidoublemailserver.com.
-5 IN PTR lumidoublewwwserver.com.
+2 IN PTR dns-client.lumidoubleclient.com 
+3 IN PTR dns-server.lumidoubleserver.com
+4 IN PTR mail-server.lumidoubleserver.com
+5 IN PTR web-server.lumidoubleserver.com

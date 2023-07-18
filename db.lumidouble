@@ -1,16 +1,16 @@
 
-@ IN SOA lumidoubleserver.com. root.lumidoubleserver.com.(
+@ IN SOA dns-server.lumidoubleserver.com. root.dns-server.lumidoubleserver.com.(
 2022092601 ;numero serial - deve ser incrementado a cada mudança neste arquivo
 21600 ;refresh - das informações para slaves
 1800 ;retry – tempo entre as tentativas
 604800 ;expire - tempo para se desistir de contactar master
 86400 ) ;mínimo - tempo a manter a informação no cache (TTL)
 
-@ IN NS lumidoubleserver.com.
+@ IN NS dns-server.lumidoubleserver.com.
 
-lumidoubleserver.com. IN MX 10 lumidoubleserver.com ;entrada MX (mail server)
+lumidoubleserver.com. IN MX 10 server-mail.lumidoubleserver.com ;entrada MX (mail server)
 localhost IN A 127.0.0.1
-lumidoubleclient IN A 192.168.10.2
-lumidoubleserver IN A 192.168.10.3
-lumidoublemailserver IN A 192.168.10.4
-lumidoublewwwserver IN A 192.168.10.5
+dns-client IN A 192.168.10.2
+dns-server IN A 192.168.10.3
+mail-server IN A 192.168.10.4
+web-server IN A 192.168.10.5

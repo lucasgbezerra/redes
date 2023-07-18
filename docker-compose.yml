@@ -11,7 +11,7 @@ services:
     volumes:
       - client-data:/data
       - ./resolv.conf:/etc/resolv.conf
-    hostname: www.lumidoubleclient.com
+    hostname: www.dns-client.lumidoubleserver.com
     tty: true
     stdin_open: true
     command: >
@@ -33,7 +33,7 @@ services:
       - ./named.conf.local:/etc/bind/named.conf.local
       - ./db.lumidouble:/etc/bind/db.lumidouble
       - ./db.doublelumi:/etc/bind/db.doublelumi
-    hostname: www.lumidoubleserver.com
+    hostname: www.dns-server.lumidoubleserver.com
     tty: true
     stdin_open: true
     command: >
@@ -74,7 +74,7 @@ services:
     volumes:
       - ./setup-apache2.sh:/setup-apache2.sh
       - ./create-html.sh:/create-html.sh
-    hostname: www.lumidoublewwwserver.com
+    hostname: www.web-server.lumidoubleserver.com
     tty: true
     stdin_open: true
     ports:

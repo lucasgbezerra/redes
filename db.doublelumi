@@ -1,11 +1,11 @@
-@       IN      SOA     dns-server.lumidoubleserver.com. root.dns-server.lumidoubleserver.com. (
+@       IN      SOA     lumidouble.com. root.lumidouble.com. (
                             324         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      dns-server.lumidoubleserver.com.
-3   IN      PTR     dns-server.lumidoubleserver.com.
-4   IN      PTR     mail-server.lumidoubleserver.com.
-5   IN      PTR     web-server.lumidoubleserver.com.
+@       IN      NS      lumidouble.com.
+3   IN      PTR     lumidouble.com.
+4   IN      PTR     mail.lumidouble.com.
+5   IN      PTR     www.lumidouble.com.

@@ -1,7 +1,7 @@
 //
 // Do any local configuration here
 //
-zone "lumidoubleserver.com" in {
+zone "lumidouble.com" in {
 type master;
 file "/etc/bind/db.lumidouble";
 };

@@ -6,7 +6,7 @@ type master;
 file "/etc/bind/db.lumidouble";
 };
 
-zone "192.168.10.3.in-addr.arpa" in {
+zone "10.168.192.in-addr.arpa" in {
 type master;
 file "/etc/bind/db.doublelumi";
 };

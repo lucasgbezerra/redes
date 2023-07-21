@@ -1,0 +1,4 @@
+https://192.168.10.10:6901
+
+user: kasm_user
+password: password

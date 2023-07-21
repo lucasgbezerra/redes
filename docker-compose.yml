@@ -77,6 +77,8 @@ services:
       - ./setup-apache2.sh:/setup-apache2.sh
       - ./create-html.sh:/create-html.sh
       - ./web-user.sh:/web-user.sh
+      - ./config-htaccess.sh:/config-htaccess.sh
+      - ./config-dominios.sh:/config-dominios.sh
     hostname: web-server
     tty: true
     stdin_open: true

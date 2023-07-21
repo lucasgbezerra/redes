@@ -28,6 +28,8 @@ services:
     networks:
       trabalho-redes:
         ipv4_address: 192.168.10.3
+    ports:
+      - 5053:5053
     volumes:
       - server-data:/etc/bind
       - ./named.conf.local:/etc/bind/named.conf.local
@@ -61,7 +63,7 @@ services:
       sh -c "
       export DEBIAN_FRONTEND=noninteractive &&
       apt-get update && 
-      apt-get install -y dnsutils postfix mailutils dovecot-core dovecot-imapd net-tools thunderbird && 
+      apt-get install -y dnsutils postfix mailutils dovecot-core dovecot-imapd dovecot-pop3d net-tools thunderbird && 
       named -g"
 
   www-server:
@@ -74,6 +76,7 @@ services:
     volumes:
       - ./setup-apache2.sh:/setup-apache2.sh
       - ./create-html.sh:/create-html.sh
+      - ./web-user.sh:/web-user.sh
     hostname: web-server
     tty: true
     stdin_open: true
@@ -84,7 +87,36 @@ services:
       export DEBIAN_FRONTEND=noninteractive &&
       apt-get update && 
       apt-get install -y dnsutils apache2 && 
-      named -g"
+      named -g
+      "
+
+  firefox:
+    image:  kasmweb/firefox:1.13.0
+    networks:
+      trabalho-redes:
+        ipv4_address: 192.168.10.10
+    dns: 192.168.10.3
+    
+    shm_size: 512m
+
+    environment:
+      - VNC_PW=password
+    hostname: firefox
+    ports:
+      - 6902:6902
+
+  thunderbird:
+    image:  kasmweb/thunderbird:1.13.0
+    networks:
+      trabalho-redes:
+        ipv4_address: 192.168.10.9
+    dns: 192.168.10.3
+    shm_size: 512m
+    environment:
+      - VNC_PW=password
+    hostname: thunderbird
+    ports:
+      - 6901:6901
 
 networks:
   trabalho-redes:

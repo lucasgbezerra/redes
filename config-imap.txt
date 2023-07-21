@@ -1,5 +1,12 @@
-nano /etc/dovecot/dovecot.conf
+apt install dovecot-imapd dovecot-pop3d
 
+nano /etc/dovecot/dovecot.conf
+protocols = pop3 imap 
 descomentar linha: list =*,::
+
+
+nano /etc/dovecot/conf.d/10-auth.com
+disable_plaintext_auth = no
+auth_mechanisms = plain login
 
 service dovecot restart

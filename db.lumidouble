@@ -1,16 +1,17 @@
 
 @ IN SOA lumidouble.com. root.lumidouble.com.(
-2022092601 ;numero serial - deve ser incrementado a cada mudança neste arquivo
-21600 ;refresh - das informações para slaves
-1800 ;retry – tempo entre as tentativas
-604800 ;expire - tempo para se desistir de contactar master
-86400 ) ;mínimo - tempo a manter a informação no cache (TTL)
+        2022092601  ;numero serial - deve ser incrementado a cada mudança neste arquivo
+        21600       ;refresh - das informações para slaves
+        1800        ;retry – tempo entre as tentativas
+        604800      ;expire - tempo para se desistir de contactar master
+        86400       ;mínimo - tempo a manter a informação no cache (TTL)
+) 
 
-@ IN NS lumidouble.com.
+@                       IN     NS  lumidouble.com.
 
-lumidouble.com.   IN   MX   10   mail.lumidouble.com. ;entrada MX (mail server)
-localhost IN A 127.0.0.1
-dns-client.lumidoubleclient.com.     IN     A   192.168.10.2
-lumidouble.com.     IN     A   192.168.10.3
+lumidouble.com.         IN     MX  10           mail.lumidouble.com. ;entrada MX (mail server)
+localhost               IN     A   127.0.0.1
+lumidoubleclient.com.   IN     A   192.168.10.2
+lumidouble.com.         IN     A   192.168.10.3
 mail.lumidouble.com.    IN     A   192.168.10.4
 www.lumidouble.com.     IN     A   192.168.10.5

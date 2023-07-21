@@ -5,7 +5,7 @@
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      lumidouble.com.
+@   IN      NS      lumidouble.com.
 3   IN      PTR     lumidouble.com.
 4   IN      PTR     mail.lumidouble.com.
 5   IN      PTR     www.lumidouble.com.
